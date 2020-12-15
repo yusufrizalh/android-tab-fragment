@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -24,8 +26,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
         // tantangan: jika dipilih salah satu menu maka buka activity baru
+        switch (item.getItemId()) {
+            case R.id.menu_1:
+                onSettingsClick(item);
+                return true;
+            case R.id.menu_2:
+                onGalleryClick(item);
+                return true;
+            case R.id.menu_3:
+                onContactClick(item);
+                return true;
+            case R.id.menu_4:
+                onWebpageClick(item);
+                return true;
+            default:
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -71,5 +88,26 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void onSettingsClick(MenuItem item) {
+        Toast.makeText(this, "Menu Settings", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+    }
+
+    public void onGalleryClick(MenuItem item) {
+        Toast.makeText(this, "Menu Gallery", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MainActivity.this, GalleryActivity.class));
+    }
+
+    public void onContactClick(MenuItem item) {
+        Toast.makeText(this, "Menu Contact", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MainActivity.this, ContactActivity.class));
+
+    }
+
+    public void onWebpageClick(MenuItem item) {
+        Toast.makeText(this, "Menu Webpage", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MainActivity.this, WebpageActivity.class));
     }
 }

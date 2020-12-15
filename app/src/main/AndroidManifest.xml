@@ -9,6 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".WebpageActivity"
+            android:label="Menu Webpage" />
+        <activity
+            android:name=".ContactActivity"
+            android:label="Menu Contact" />
+        <activity
+            android:name=".GalleryActivity"
+            android:label="Menu Gallery" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Menu Settings" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
